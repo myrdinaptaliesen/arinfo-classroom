@@ -31,12 +31,12 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function authenticate(Request $request): PassportInterface
     {
-        $username = $request->request->get('username', '');
+        $email = $request->request->get('email', '');
 
-        $request->getSession()->set(Security::LAST_USERNAME, $username);
+        $request->getSession()->set(Security::LAST_USERNAME, $email);
 
         return new Passport(
-            new UserBadge($username),
+            new UserBadge($email),
             new PasswordCredentials($request->request->get('password', '')),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
@@ -50,7 +50,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-       
+        // For example:
         return new RedirectResponse($this->urlGenerator->generate('home'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
