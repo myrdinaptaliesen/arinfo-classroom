@@ -9,7 +9,7 @@
 </style>
 
     {% for message in app.flashes('success') %}
-        <div class="alert alert-succes" role="alert">{{ success }}</div>
+        <div class="alert alert-succes" role="alert">{{message }}</div>
     {% endfor %}
 
 <div class="example-wrapper">
