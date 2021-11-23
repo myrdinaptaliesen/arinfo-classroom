@@ -27,6 +27,11 @@ class Chapters
      */
     private $pictureChapter;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Themes::class, inversedBy="chapters")
+     */
+    private $themes;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Chapters
     public function setPictureChapter(string $pictureChapter): self
     {
         $this->pictureChapter = $pictureChapter;
+
+        return $this;
+    }
+
+    public function getThemes(): ?Themes
+    {
+        return $this->themes;
+    }
+
+    public function setThemes(?Themes $themes): self
+    {
+        $this->themes = $themes;
 
         return $this;
     }
