@@ -27,6 +27,11 @@ class Exercices
      */
     private $descriptionExercice;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=SubChapters::class, inversedBy="exercices")
+     */
+    private $subChapters;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Exercices
     public function setDescriptionExercice(string $descriptionExercice): self
     {
         $this->descriptionExercice = $descriptionExercice;
+
+        return $this;
+    }
+
+    public function getSubChapters(): ?SubChapters
+    {
+        return $this->subChapters;
+    }
+
+    public function setSubChapters(?SubChapters $subChapters): self
+    {
+        $this->subChapters = $subChapters;
 
         return $this;
     }
