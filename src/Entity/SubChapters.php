@@ -27,6 +27,11 @@ class SubChapters
      */
     private $videoSubChapter;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Chapters::class, inversedBy="subChapters")
+     */
+    private $chapters;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class SubChapters
     public function setVideoSubChapter(string $videoSubChapter): self
     {
         $this->videoSubChapter = $videoSubChapter;
+
+        return $this;
+    }
+
+    public function getChapters(): ?Chapters
+    {
+        return $this->chapters;
+    }
+
+    public function setChapters(?Chapters $chapters): self
+    {
+        $this->chapters = $chapters;
 
         return $this;
     }

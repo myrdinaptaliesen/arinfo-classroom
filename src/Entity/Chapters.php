@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ChaptersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Chapters
      * @ORM\ManyToOne(targetEntity=Themes::class, inversedBy="chapters")
      */
     private $themes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=SubChapters::class, mappedBy="chapters")
+     */
+    private $subChapters;
+
+    public function __construct()
+    {
+        $this->subChapters = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -69,6 +81,36 @@ class Chapters
     public function setThemes(?Themes $themes): self
     {
         $this->themes = $themes;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SubChapters[]
+     */
+    public function getSubChapters(): Collection
+    {
+        return $this->subChapters;
+    }
+
+    public function addSubChapter(SubChapters $subChapter): self
+    {
+        if (!$this->subChapters->contains($subChapter)) {
+            $this->subChapters[] = $subChapter;
+            $subChapter->setChapters($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubChapter(SubChapters $subChapter): self
+    {
+        if ($this->subChapters->removeElement($subChapter)) {
+            // set the owning side to null (unless already changed)
+            if ($subChapter->getChapters() === $this) {
+                $subChapter->setChapters(null);
+            }
+        }
 
         return $this;
     }
