@@ -18,13 +18,14 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('firstName')
-        ->add('lastName')
+            ->add('firstName')
+            ->add('lastName')
             ->add('email')
             ->add('categoryUser', ChoiceType::class, [
                 'choices' => [
-                        'Développeur' => 'Développeur',
-                        'Web Designer' => 'Web Designer',  
+                    'Développeur' => 'Développeur',
+                    'Web Designer' => 'Web Designer',
+                    'Formateur' => 'Formateur',
                 ],
             ])
             // ->add('agreeTerms', CheckboxType::class, [
@@ -51,8 +52,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
