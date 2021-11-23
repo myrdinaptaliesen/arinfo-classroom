@@ -6,6 +6,7 @@ use App\Repository\ThemesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ThemesRepository::class)
@@ -33,6 +34,14 @@ class Themes
      * @ORM\OneToMany(targetEntity=Chapters::class, mappedBy="themes")
      */
     private $chapters;
+
+    /**
+     * @Gedmo\Slug(fields={"titleTheme"})
+     * @ORM\Column(type="string", length=100)
+     */
+    private $slug;
+
+
 
     public function __construct()
     {
@@ -97,4 +106,10 @@ class Themes
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
 }

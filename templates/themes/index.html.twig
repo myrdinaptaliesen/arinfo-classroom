@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Themes index{% endblock %}
+
+{% block body %}
+    <h1>Themes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>TitleTheme</th>
+                <th>PictureTheme</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for theme in themes %}
+            <tr>
+                <td>{{ theme.id }}</td>
+                <td>{{ theme.titleTheme }}</td>
+                <td>{{ theme.pictureTheme }}</td>
+                <td>
+                    <a href="{{ path('themes_show', {'slug': theme.slug}) }}">show</a>
+                    <a href="{{ path('themes_edit', {'slug': theme.slug}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('themes_new') }}">Create new</a>
+{% endblock %}
