@@ -1,0 +1,43 @@
+/******************Couleurs*******************/
+/*******************Header******************/
+nav {
+  background-color: #445586;
+}
+
+nav a.nav-link {
+  color: #fff;
+}
+
+/*******************Main******************/
+.themeSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
+.linkTheme {
+  text-decoration: none;
+}
+
+.linkTheme .card {
+  margin: 25px;
+}
+
+.linkTheme .card img {
+  height: 175px;
+}
+
+.linkTheme .card h5 {
+  text-align: center;
+  color: #445586;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */

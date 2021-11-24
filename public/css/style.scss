@@ -1,0 +1,38 @@
+/******************Couleurs*******************/
+
+$bleuArinfo:rgb(68, 85, 134);
+
+/*******************Header******************/
+
+nav {
+    background-color: $bleuArinfo;
+    a.nav-link {
+        color: #fff;
+    }
+}
+
+
+/*******************Main******************/
+
+.themeSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.linkTheme {
+    text-decoration: none;
+    .card {
+        margin: 25px;
+        img {
+            height: 175px;
+        }
+        h5 {
+            text-align: center;
+            color: $bleuArinfo;
+            text-decoration: none;
+        }
+    }
+}
