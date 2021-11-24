@@ -105,7 +105,7 @@ class ChaptersController extends AbstractController
                 // met à jour la propriété 'photoEleve' pour stocker le nom du fichier PDF
                 // au lieu de son contenu
                 $chapter->setPictureChapter($newFilename);
-
+            }
             $entityManager->flush();
 
             return $this->redirectToRoute('chapters_index', [], Response::HTTP_SEE_OTHER);
