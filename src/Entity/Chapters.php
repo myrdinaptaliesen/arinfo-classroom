@@ -6,6 +6,7 @@ use App\Repository\ChaptersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=ChaptersRepository::class)
@@ -38,6 +39,12 @@ class Chapters
      * @ORM\OneToMany(targetEntity=SubChapters::class, mappedBy="chapters")
      */
     private $subChapters;
+
+    /**
+     * @Gedmo\Slug(fields={"titleChapter"})
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $slug;
 
     public function __construct()
     {
@@ -114,4 +121,11 @@ class Chapters
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+
 }

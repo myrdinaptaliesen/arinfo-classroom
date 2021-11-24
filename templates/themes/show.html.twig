@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Themes
+{% block title %}{{theme.titleTheme}}
 {% endblock %}
 
 {% block body %}
@@ -11,7 +11,7 @@
 			{% for chapter in theme.chapters %}
 
 
-				<a class="linkTheme" href="{{ path('chapters_show', {'id': chapter.id}) }}">
+				<a class="linkTheme" href="{{ path('chapters_show', {'slug': chapter.slug}) }}">
 					<div class="card" style="width: 360px;">
 						<img src="{{asset('uploads/pictures/' ~ chapter.pictureChapter) }}" class="card-img-top">
 						<div class="card-body">

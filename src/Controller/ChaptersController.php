@@ -67,7 +67,7 @@ class ChaptersController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'chapters_show', methods: ['GET'])]
+    #[Route('/{slug}', name: 'chapters_show', methods: ['GET'])]
     public function show(Chapters $chapter): Response
     {
         return $this->render('chapters/show.html.twig', [
@@ -75,7 +75,7 @@ class ChaptersController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'chapters_edit', methods: ['GET', 'POST'])]
+    #[Route('/{slug}/edit', name: 'chapters_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Chapters $chapter, EntityManagerInterface $entityManager,SluggerInterface $slugger): Response
     {
         $form = $this->createForm(ChaptersType::class, $chapter);
