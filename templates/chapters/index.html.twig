@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chapters index
+{% endblock %}
+
+{% block body %}
+	<h1>Liste des chapitres</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Titre</th>
+				<th>Image</th>
+				<th>Thème</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for chapter in chapters %}
+				<tr>
+					<td>{{ chapter.titleChapter }}</td>
+					<td><img src="{{ asset('uploads/pictures/' ~ chapter.pictureChapter) }}" width="100"></td>
+					<td>{{chapter.themes.titleTheme}}</td>
+					<td>
+						<a href="{{ path('chapters_show', {'id': chapter.id}) }}">show</a>
+						<a href="{{ path('chapters_edit', {'id': chapter.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="4">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<a href="{{ path('chapters_new') }}">Créer un nouveau chapitre</a>
+{% endblock %}

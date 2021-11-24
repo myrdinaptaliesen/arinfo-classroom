@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de chapitre{% endblock %}
+
+{% block body %}
+    <h1>Création de chapitres</h1>
+
+    {{ include('chapters/_form.html.twig') }}
+
+    <a href="{{ path('chapters_index') }}">Retour à la liste des chapitres</a>
+{% endblock %}
