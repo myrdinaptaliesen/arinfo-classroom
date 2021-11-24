@@ -76,7 +76,7 @@ class ChaptersController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'chapters_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Chapters $chapter, EntityManagerInterface $entityManager): Response
+    public function edit(Request $request, Chapters $chapter, EntityManagerInterface $entityManager,SluggerInterface $slugger): Response
     {
         $form = $this->createForm(ChaptersType::class, $chapter);
         $form->handleRequest($request);
