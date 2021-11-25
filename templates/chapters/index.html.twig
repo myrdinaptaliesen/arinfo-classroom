@@ -22,8 +22,8 @@
 					<td><img src="{{ asset('uploads/pictures/' ~ chapter.pictureChapter) }}" width="100"></td>
 					<td>{{chapter.themes.titleTheme}}</td>
 					<td>
-						<a href="{{ path('chapters_show', {'id': chapter.id}) }}">show</a>
-						<a href="{{ path('chapters_edit', {'id': chapter.id}) }}">edit</a>
+						<a href="{{ path('chapters_show', {'slug': chapter.slug}) }}">show</a>
+						<a href="{{ path('chapters_edit', {'slug': chapter.slug}) }}">edit</a>
 					</td>
 				</tr>
 			{% else %}
