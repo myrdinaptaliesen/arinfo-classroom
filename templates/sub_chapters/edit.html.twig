@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit SubChapters{% endblock %}
+{% block title %}Modification des sous chapitres{% endblock %}
 
 {% block body %}
-    <h1>Edit SubChapters</h1>
+    <h1>Modification des sous chapitres</h1>
 
-    {{ include('sub_chapters/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('sub_chapters/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('sub_chapters_index') }}">back to list</a>
+    <a href="{{ path('sub_chapters_index') }}">Retour à la liste des sous chapitres</a>
 
     {{ include('sub_chapters/_delete_form.html.twig') }}
 {% endblock %}

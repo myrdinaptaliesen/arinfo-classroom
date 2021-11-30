@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New SubChapters{% endblock %}
+{% block title %}Création d'un sous chapitre{% endblock %}
 
 {% block body %}
-    <h1>Create new SubChapters</h1>
+<div class="container">
+    <h1>Création d'un sous chapitre</h1>
 
     {{ include('sub_chapters/_form.html.twig') }}
 
-    <a href="{{ path('sub_chapters_index') }}">back to list</a>
+    <a href="{{ path('sub_chapters_index') }}">Retour à la liste des sous chapitres</a>
+    </div>
 {% endblock %}

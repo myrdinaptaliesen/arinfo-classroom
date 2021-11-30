@@ -1,37 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}SubChapters index{% endblock %}
+{% block title %}Liste des sous chapitres{% endblock %}
 
 {% block body %}
-    <h1>SubChapters index</h1>
+<div class="container">
+    <h1>Liste des sous chapitres</h1>
+
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>TitleSubChapter</th>
-                <th>VideoSubChapter</th>
+                <th>Titre du sous chapitre</th>
+                <th>Vidéo</th>
+                <th>Chapitre</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for sub_chapter in sub_chapters %}
             <tr>
-                <td>{{ sub_chapter.id }}</td>
                 <td>{{ sub_chapter.titleSubChapter }}</td>
                 <td>{{ sub_chapter.videoSubChapter }}</td>
+                <td>{{ sub_chapter.chapters.titleChapter }}</td>
                 <td>
-                    <a href="{{ path('sub_chapters_show', {'id': sub_chapter.id}) }}">show</a>
-                    <a href="{{ path('sub_chapters_edit', {'id': sub_chapter.id}) }}">edit</a>
+                    <a href="{{ path('sub_chapters_show', {'id': sub_chapter.id}) }}">Voir</a>
+                    <a href="{{ path('sub_chapters_edit', {'id': sub_chapter.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">PAs de résultats</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('sub_chapters_new') }}">Create new</a>
+    <a href="{{ path('sub_chapters_new') }}">Créer un sous chapitre</a>
+    </div>
 {% endblock %}
