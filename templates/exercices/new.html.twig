@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un nouvel exercice{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Création d'un nouvel exercice</h1>
+
+    {{ include('exercices/_form.html.twig') }}
+
+    <a href="{{ path('exercices_index') }}">Retour à la liste des exercices</a>
+    </div>
+{% endblock %}
