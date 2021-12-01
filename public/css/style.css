@@ -91,7 +91,7 @@ button.accordion.active:after {
   width: 350px;
   margin-top: auto;
   margin-bottom: auto;
-  background: #f39c12;
+  background: #002647;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,6 +108,12 @@ button.accordion.active:after {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
+}
+
+.user_card h1,
+.user_card a {
+  color: white;
+  text-align: center;
 }
 
 .brand_logo_container {
@@ -134,7 +140,7 @@ button.accordion.active:after {
 
 .login_btn {
   width: 100%;
-  background: #c0392b !important;
+  background: #0076a8 !important;
   color: white !important;
 }
 
@@ -149,10 +155,11 @@ button.accordion.active:after {
 }
 
 .input-group-text {
-  background: #c0392b !important;
+  background: #0076a8 !important;
   color: white !important;
   border: 0 !important;
   border-radius: 0.25rem 0 0 0.25rem !important;
+  height: 100%;
 }
 
 .input_user,
