@@ -10,6 +10,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ExercicesType extends AbstractType
 {
@@ -19,12 +21,17 @@ class ExercicesType extends AbstractType
             ->add('titleExercise', TextType::class, [
                 'label' => 'Titre de l\'exercice'
             ])
-            ->add('descriptionExercice')
+            ->add('descriptionExercice', HiddenType::class)
             ->add('subChapters', EntityType::class, [
                 'class' => SubChapters::class,
                 'choice_label' => 'titleSubChapter',
                 'label' => 'Sous chapitre concerné'
-            ]);
+            ])
+            ->add('Envoyer', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn primary'
+                ]
+            ])
         ;
     }
 

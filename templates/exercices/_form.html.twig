@@ -1,4 +1,13 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {# {{ form_widget(form) }} #}
+    {{ form_row(form.titleExercise) }}
+    {{ form_row(form.subChapters) }}
+    <p>Contenu de l'exercice</p>
+    <div id="editor" ></div>
+    {# <button class="btn">{{ button_label|default('Save') }}</button> #}
 {{ form_end(form) }}
+
+{% block javascripts %}
+    <script src="{{asset('ckeditor5/ckeditor.js')}}"></script>
+    <script src="{{asset('js/ckeditor.js')}}"></script>
+{% endblock %}

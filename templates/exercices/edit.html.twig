@@ -5,7 +5,8 @@
 {% block body %}
     <h1>Edit Exercices</h1>
 
-    {{ include('exercices/_form.html.twig', {'button_label': 'Modifier'}) }}
+    {# {{ include('exercices/_form.html.twig', {'button_label': 'Modifier'}) }} #}
+    {{ include('exercices/_formEdit.html.twig') }}
 
     <a href="{{ path('exercices_index') }}">Retour à la liste</a>
 

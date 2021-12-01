@@ -21,7 +21,7 @@
                 <td>{{ exercice.id }}</td>
                 <td>{{ exercice.titleExercise }}</td>
                 <td>{{ exercice.descriptionExercice }}</td>
-                <td>{{ exercice.subChapter.titleSubChapter }}</td>
+                <td>{{ exercice.subChapters.titleSubChapter }}</td>
                 <td>
                     <a href="{{ path('exercices_show', {'id': exercice.id}) }}">Voir</a>
                     <a href="{{ path('exercices_edit', {'id': exercice.id}) }}">Modifier</a>
